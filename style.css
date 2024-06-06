@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: '', sans-serif;
+    font-style: normal;
+}
+
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-wrapper {
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-wrapper-inner {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.2rem;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideReverse {
+    100% {
+        transform: translateX(0);
+    }
+
+    0% {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel-slide {
+    flex: 0 0 34.8%;
+    height: 26rem;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.carousel-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    z-index: -1;
+}
+
+.slide-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgb(239, 241, 240);
+    background: linear-gradient(rgba(239, 241, 240, 0) 46%, rgb(145, 202, 175) 80%);
+    border-radius: 1rem;
+}
+
+.slide-descripion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.slide-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 30;
+}
+
+.slide-header-title {
+    padding: 0.2rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    background: rgb(158, 154, 154);
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.slide-header-button {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.3rem;
+    background: rgb(158, 154, 154);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.button-dot {
+    width: 0.15rem;
+    height: 0.15rem;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+.pop-up {
+    width: 90%;
+    visibility: hidden;
+    position: absolute;
+    top: 0.5rem;
+    left: 5%;
+    background: #FFFFFF;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    z-index: 30;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.pop-up-inner {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgb(153, 149, 149);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.close-button {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: rgb(153, 149, 149);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible;
+}
+
+
+.carousel-link {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    color: rgb(153, 149, 149);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+/* media */
+@media (max-width: 1440px) {
+    .carousel-slide {
+        flex: 0 0 31.1%;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-33%);
+        }
+    }
+
+    @keyframes slideReverse {
+        100% {
+            transform: translateX(0);
+        }
+
+        0% {
+            transform: translateX(-33%);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .carousel-slide {
+        flex: 0 0 26.4%;
+    }
+
+    .carousel-wrapper-inner {
+        gap: 1rem;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-56%);
+        }
+    }
+
+    @keyframes slideReverse {
+        100% {
+            transform: translateX(0);
+        }
+
+        0% {
+            transform: translateX(-56%);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex: 0 0 30.05%;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-127%);
+        }
+    }
+
+    @keyframes slideReverse {
+        100% {
+            transform: translateX(0);
+        }
+
+        0% {
+            transform: translateX(-127%);
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .carousel-slide {
+        flex: 0 0 33.8%;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-213%);
+        }
+    }
+
+    @keyframes slideReverse {
+        16% {
+            transform: translateX(0);
+        }
+
+        0% {
+            transform: translateX(-213%);
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .carousel-slide {
+        flex: 0 0 29.6%;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-125%);
+        }
+    }
+
+    @keyframes slideReverse {
+        16% {
+            transform: translateX(0);
+        }
+
+        0% {
+            transform: translateX(-125%);
+        }
+    }
+
+}
+
+@media (max-width: 320px) {
+    .carousel-slide {
+        flex: 0 0 25.2%;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-161%);
+        }
+    }
+
+    @keyframes slideReverse {
+        16% {
+            transform: translateX(0);
+        }
+
+        0% {
+            transform: translateX(-161%);
+        }
+    }
+
+}
