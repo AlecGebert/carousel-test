@@ -131,3 +131,27 @@ function closePopup() {
 
 btns.forEach((btn) => btn.addEventListener("click", togglePopup));
 closeBtns.forEach((btn) => btn.addEventListener("click", closePopup));
+// ......................
+
+const hiddenBtn = document.querySelector(".carousel-control-prev");
+const hiddenRightBtn = document.querySelector(".carousel-control-next");
+
+function handleMouseOver() {
+  document.querySelector(".carousel-control-prev").style.animation =
+    "appear forwards 1s 1";
+  document.querySelector(".carousel-control-next").style.animation =
+    "leftAppear forwards 1s 1";
+}
+function handleMouseLeave() {
+  document.querySelector(".carousel-control-prev").style.animation =
+    "disappear forwards 1s 1";
+  document.querySelector(".carousel-control-next").style.animation =
+    "LeftDisappear forwards 1s 1";
+}
+
+document
+  .querySelector(".carousel-wrapper")
+  .addEventListener("mouseover", handleMouseOver);
+document
+  .querySelector(".carousel-wrapper")
+  .addEventListener("mouseleave", handleMouseLeave);
